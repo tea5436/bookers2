@@ -1,7 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'users/name', user: @user_current %>
+      <%= render 'users/new', book: @book %>
+    </div>
+    <div class="offset-md-1"></div>
+    <div class="col-md-8">
 
-<%= render 'users/name', user: @user %>
-<%= render 'users/new', book: @book %>
-<h1>ユーザー一覧</h1>
-<% @users.each do |user| %>
-  <p><%= user.name %></p>
-<% end %>
+      <table class="table">
+        <tr>
+          <th>
+            <h2>Users</h2>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <h6>image</h6>
+          </td>
+          <td>
+            <h6>name</h6>
+          </td>
+          <td>
+          </td>
+        </tr>
+      </table>
+      <% @users.each do |user| %>
+        <table class="table">
+          <tr>
+            <td>
+              <%= image_tag user.get_profile_image(100,100) %>
+            </td>
+            <td>
+              <%= user.name %>
+            </td>
+            <td>
+              <%= link_to "Show", user_path(user.id) %>
+            </td>
+          </tr>
+          <br>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+

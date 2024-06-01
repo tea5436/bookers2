@@ -6,7 +6,7 @@
   </tr>
   <tr>
     <td>
-      <%= image_tag @user_current.get_profile_image(100,100) %>
+      <%= image_tag user.get_profile_image(100,100) %>
     </td>
   </tr>
   <tr>
@@ -17,7 +17,7 @@
     </td>
     <td>
       <div>
-        <h6><%= @user_current.name %></h6>
+        <h6><%= user.name %></h6>
       </div>
     </td>
   </tr>
@@ -38,6 +38,6 @@
 
 </table>
 
- <%= link_to  edit_user_path(current_user.id), class: "btn btn-outline-secondary", style: "width: 185px;" do %>
+ <%= link_to  edit_user_path(user.id), class: "btn btn-outline-secondary", style: "width: 185px;" do %>
  <i class="fa-solid fa-user-gear"></i>
 <% end %>
